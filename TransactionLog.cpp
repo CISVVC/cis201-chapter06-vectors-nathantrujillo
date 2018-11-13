@@ -14,13 +14,13 @@ void TransactionLog::add_transaction(Transaction t)
     m_balance += t.get_ammount();
     min_daily_balance();
 }
-
+// Calculates the daily balance
 int TransactionLog::min_daily_balance()
 {
     if (m_balance < m_min_balance || m_min_balance == false)
         m_min_balance = m_balance;
 }
-
+// calculates average daily balance
 double TransactionLog::average_daily_balance()
 {
     double sum_total = 0;
@@ -30,7 +30,7 @@ double TransactionLog::average_daily_balance()
     }
     return sum_total / 30;
 }
-
+//prints statement 
 void TransactionLog::print()
 {
         double sum_total = 0;
